@@ -9,12 +9,25 @@ const store = createStore({
   state: {
     tasks: TaskListStories.Default.args.tasks,
   },
-  actions: {
-    pinTask(context, id) {
-      action("pin-task")(id);
+
+  mutations: {
+    ARCHIVE_TASK(state, id) {
+      state.tasks.find(task => task.id === id).state = 'TASK_ARCHIVED';
     },
-    archiveTask(context, id) {
+    
+    PIN_TASK(state, id) {
+      state.tasks.find(task => task.id === id).state = 'TASK_PINNED';
+    },
+  },
+
+  actions: {
+    archiveTask({ commit }, id) {
+      commit('ARCHIVE_TASK', id);
       action("archive-task")(id);
+    },
+    pinTask({ commit }, id) {
+      commit('PIN_TASK', id);
+      action("pin-task")(id);
     },
   },
 });
