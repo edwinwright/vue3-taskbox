@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes" :style="{ backgroundColor: 'red' }">
+  <div :class="classes">
     <label class="checkbox">
       <input type="checkbox" :checked="isChecked" disabled name="checked" />
       <span class="checkbox-custom" @click="archiveTask" :aria-label="'archiveTask-' + task.id" />
