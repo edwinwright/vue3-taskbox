@@ -1,10 +1,10 @@
 <template>
-  <div :class="classes">
+  <div :class="classes" :style="{ backgroundColor: 'red' }">
     <label class="checkbox">
       <input type="checkbox" :checked="isChecked" disabled name="checked" />
       <span class="checkbox-custom" @click="archiveTask" :aria-label="'archiveTask-' + task.id" />
     </label>
-    <div class="title" :style="{ color: 'red'}">
+    <div class="title">
       <input type="text" :value="task.title" readonly placeholder="Input title" />
     </div>
     <div class="actions">
