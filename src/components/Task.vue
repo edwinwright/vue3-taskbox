@@ -4,7 +4,7 @@
       <input type="checkbox" :checked="isChecked" disabled name="checked" />
       <span class="checkbox-custom" @click="archiveTask" :aria-label="'archiveTask-' + task.id" />
     </label>
-    <div class="title">
+    <div class="title" :style="{ color: 'red'}">
       <input type="text" :value="task.title" readonly placeholder="Input title" />
     </div>
     <div class="actions">
