@@ -5,7 +5,12 @@
       <span class="checkbox-custom" @click="archiveTask" :aria-label="'archiveTask-' + task.id" />
     </label>
     <div class="title">
-      <input type="text" :value="task.title" readonly placeholder="Input title" />
+      <input
+        type="text"
+        :value="task.title"
+        readonly
+        placeholder="Input title"
+      />
     </div>
     <div class="actions">
       <a v-if="!isChecked" @click="pinTask">
